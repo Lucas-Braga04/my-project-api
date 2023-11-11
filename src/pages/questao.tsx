@@ -23,11 +23,16 @@ export default function Questao(){
         return <LoadingSpinner/>;
     }
 
+    const resOrdenada = [...questao.resposta]
+
     return(
         <div>
             <h1>Questão</h1>
             <div>
                 <span>{questao?.enunciado}</span>
+                <ul>
+                    {resOrdenada.map((resposta, index) => (<li key={index}>{resposta}</li>))}
+                </ul>
             </div>
         </div>
     )
